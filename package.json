@@ -3,7 +3,17 @@
   "version": "1.0.0",
   "description": "Production-style end-to-end test automation framework using Playwright, TypeScript, API testing, and GitHub Actions.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:login": "playwright test --grep @login",
+    "test:negative": "playwright test --grep @negative",
+    "test:chromium": "playwright test --project=chromium",
+    "test:headed": "playwright test --project=chromium --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sadi-qa/playwright-typescript-e2e-framework.git"
