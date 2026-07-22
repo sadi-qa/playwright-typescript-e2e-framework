@@ -23,9 +23,15 @@ The initial application under test is SauceDemo, a demonstration e-commerce webs
 
 ## Current Test Coverage
 
-* Login form visibility
-* Required-field validation
-* Cross-browser smoke execution
+- Login form visibility
+- Empty login submission
+- Missing username validation
+- Missing password validation
+- Invalid credential rejection
+- Standard-user authentication
+- Locked-user rejection
+- Error-message dismissal
+- Cross-browser execution in Chromium, Firefox, and WebKit
 
 ## Test Documentation
 
@@ -41,6 +47,23 @@ The initial application under test is SauceDemo, a demonstration e-commerce webs
 * npm
 * Git
 * GitHub Actions
+
+## Framework Structure
+
+```text
+config/
+└── environment.ts
+
+pages/
+└── login.page.ts
+
+test-data/
+├── login-messages.ts
+└── users.ts
+
+tests/
+└── auth/
+    └── login.spec.ts
 
 ## Local Setup
 
