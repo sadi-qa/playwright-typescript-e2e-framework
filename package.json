@@ -1,0 +1,23 @@
+{
+  "name": "playwright-typescript-e2e-framework",
+  "version": "1.0.0",
+  "description": "Production-style end-to-end test automation framework using Playwright, TypeScript, API testing, and GitHub Actions.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sadi-qa/playwright-typescript-e2e-framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sadi-qa/playwright-typescript-e2e-framework/issues"
+  },
+  "homepage": "https://github.com/sadi-qa/playwright-typescript-e2e-framework#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1"
+  }
+}
