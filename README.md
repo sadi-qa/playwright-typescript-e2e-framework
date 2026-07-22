@@ -27,6 +27,12 @@ The initial application under test is SauceDemo, a demonstration e-commerce webs
 * Required-field validation
 * Cross-browser smoke execution
 
+## Test Documentation
+
+- [Test Plan](docs/test-plan.md)
+- [Initial Test Inventory](docs/test-inventory.md)
+- [Exploratory Testing Notes](docs/exploratory-testing-notes.md)
+
 ## Technology Stack
 
 * TypeScript
