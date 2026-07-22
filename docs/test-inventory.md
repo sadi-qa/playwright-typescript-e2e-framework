@@ -22,15 +22,15 @@
 
 | ID           | Module               | Scenario                                 | Expected Result                                                    | Priority | Test Type                 | Automation | Status    |
 | ------------ | -------------------- | ---------------------------------------- | ------------------------------------------------------------------ | -------- | ------------------------- | ---------- | --------- |
-| LOGIN-001    | Login                | Display login controls                   | Username, password, and Login controls are visible                 | P0       | Smoke, UI                 | Yes        | Automated |
-| LOGIN-002    | Login                | Submit empty login form                  | Required username validation is displayed                          | P1       | Negative                  | Yes        | Automated |
-| LOGIN-003    | Login                | Submit username without password         | Required password validation is displayed                          | P1       | Negative                  | Yes        | Planned   |
-| LOGIN-004    | Login                | Submit password without username         | Required username validation is displayed                          | P1       | Negative                  | Yes        | Planned   |
-| LOGIN-005    | Login                | Submit invalid username and password     | Authentication error is displayed and login is rejected            | P1       | Negative                  | Yes        | Planned   |
-| LOGIN-006    | Login                | Log in with standard user                | User is redirected to inventory                                    | P0       | Smoke, Functional         | Yes        | Planned   |
-| LOGIN-007    | Login                | Log in with locked user                  | Locked-user error is displayed                                     | P1       | Negative                  | Yes        | Planned   |
-| LOGIN-008    | Login                | Close displayed error                    | Error banner and related indicators close correctly                | P2       | UI                        | Later      | Planned   |
-| LOGIN-009    | Login                | Submit valid credentials using keyboard  | Login succeeds through normal keyboard navigation                  | P2       | Accessibility, Functional | Later      | Planned   |
+| LOGIN-001 | Login | Display login controls | Username, password, and Login controls are visible | P0 | Smoke, UI | Yes | Automated |
+| LOGIN-002 | Login | Submit empty login form | Required username validation is displayed | P1 | Negative | Yes | Automated |
+| LOGIN-003 | Login | Submit username without password | Required password validation is displayed | P1 | Negative | Yes | Automated |
+| LOGIN-004 | Login | Submit password without username | Required username validation is displayed | P1 | Negative | Yes | Automated |
+| LOGIN-005 | Login | Submit invalid username and password | Authentication error is displayed and login is rejected | P1 | Negative | Yes | Automated |
+| LOGIN-006 | Login | Log in with standard user | User is redirected to inventory | P0 | Smoke, Functional | Yes | Automated |
+| LOGIN-007 | Login | Log in with locked user | Locked-user error is displayed | P1 | Negative | Yes | Automated |
+| LOGIN-008 | Login | Close displayed error | Error banner closes correctly | P2 | UI | Yes | Automated |
+| LOGIN-009 | Login | Submit valid credentials using keyboard | Login succeeds through normal keyboard navigation | P2 | Accessibility, Functional | Later | Planned |
 | AUTH-001     | Authorization        | Open inventory URL while logged out      | Unauthorized user is rejected or redirected appropriately          | P0       | Security, Negative        | Yes        | Planned   |
 | AUTH-002     | Authorization        | Use Back after logout                    | Protected content is not usable after logout                       | P1       | Security, Session         | Yes        | Planned   |
 | INV-001      | Inventory            | Display inventory page                   | Product list and essential page controls are visible               | P0       | Smoke, UI                 | Yes        | Planned   |
