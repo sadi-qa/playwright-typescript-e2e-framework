@@ -32,7 +32,7 @@
 | LOGIN-008 | Login | Close displayed error | Error banner closes correctly | P2 | UI | Yes | Automated |
 | LOGIN-009 | Login | Submit valid credentials using keyboard | Login succeeds through normal keyboard navigation | P2 | Accessibility, Functional | Later | Planned |
 | AUTH-001     | Authorization        | Open inventory URL while logged out      | Unauthorized user is rejected or redirected appropriately          | P0       | Security, Negative        | Yes        | Planned   |
-| AUTH-002     | Authorization        | Use Back after logout                    | Protected content is not usable after logout                       | P1       | Security, Session         | Yes        | Planned   |
+| AUTH-002     | Authorization        | Use Back after logout.                    | Protected content is not usable after logout                       | P1       | Security, Session         | Yes        | Planned   |
 | INV-001      | Inventory            | Display inventory page                   | Product list and essential page controls are visible               | P0       | Smoke, UI                 | Yes        | Planned   |
 | INV-002      | Inventory            | Validate product information             | Every product displays name, description, image, price, and action | P1       | Functional, UI            | Yes        | Planned   |
 | INV-003      | Inventory            | Sort products by name ascending          | Products appear in ascending alphabetical order                    | P1       | Functional                | Yes        | Planned   |
