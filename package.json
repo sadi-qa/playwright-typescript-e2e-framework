@@ -12,7 +12,8 @@
     "test:chromium": "playwright test --project=chromium",
     "test:headed": "playwright test --project=chromium --headed",
     "test:ui": "playwright test --ui",
-    "report": "playwright show-report"
+    "report": "playwright show-report",
+    "test:inventory": "playwright test --grep @inventory"
   },
   "repository": {
     "type": "git",
