@@ -33,13 +33,13 @@
 | LOGIN-009 | Login | Submit valid credentials using keyboard | Login succeeds through normal keyboard navigation | P2 | Accessibility, Functional | Later | Planned |
 | AUTH-001     | Authorization        | Open inventory URL while logged out      | Unauthorized user is rejected or redirected appropriately          | P0       | Security, Negative        | Yes        | Planned   |
 | AUTH-002     | Authorization        | Use Back after logout.                    | Protected content is not usable after logout                       | P1       | Security, Session         | Yes        | Planned   |
-| INV-001      | Inventory            | Display inventory page                   | Product list and essential page controls are visible               | P0       | Smoke, UI                 | Yes        | Planned   |
-| INV-002      | Inventory            | Validate product information             | Every product displays name, description, image, price, and action | P1       | Functional, UI            | Yes        | Planned   |
-| INV-003      | Inventory            | Sort products by name ascending          | Products appear in ascending alphabetical order                    | P1       | Functional                | Yes        | Planned   |
-| INV-004      | Inventory            | Sort products by name descending         | Products appear in descending alphabetical order                   | P1       | Functional                | Yes        | Planned   |
-| INV-005      | Inventory            | Sort products by price ascending         | Products appear from lowest to highest numeric price               | P1       | Functional                | Yes        | Planned   |
-| INV-006      | Inventory            | Sort products by price descending        | Products appear from highest to lowest numeric price               | P1       | Functional                | Yes        | Planned   |
-| INV-007      | Inventory            | Refresh inventory page                   | Page reloads without losing expected session state                 | P2       | Session                   | Later      | Planned   |
+| INV-001 | Inventory | Display inventory page | Product list and essential page controls are visible | P0 | Smoke, UI | Yes | Automated |
+| INV-002 | Inventory | Validate product information | Every product displays name, description, image, price, and action | P1 | Functional, UI | Yes | Automated |
+| INV-003 | Inventory | Sort products by name ascending | Products appear in ascending alphabetical order | P1 | Functional | Yes | Automated |
+| INV-004 | Inventory | Sort products by name descending | Products appear in descending alphabetical order | P1 | Functional | Yes | Automated |
+| INV-005 | Inventory | Sort products by price ascending | Products appear from lowest to highest numeric price | P1 | Functional | Yes | Automated |
+| INV-006 | Inventory | Sort products by price descending | Products appear from highest to lowest numeric price | P1 | Functional | Yes | Automated |
+| INV-007 | Inventory | Refresh inventory page | Page reloads without losing expected session state | P2 | Session | Later | Planned |
 | DETAIL-001   | Product Details      | Open product from product name           | Correct product details page opens                                 | P1       | Functional                | Yes        | Planned   |
 | DETAIL-002   | Product Details      | Compare inventory and detail information | Name, description, image, and price are consistent                 | P1       | Data Validation           | Yes        | Planned   |
 | DETAIL-003   | Product Details      | Return to inventory                      | Back to products returns user to inventory                         | P2       | Navigation                | Yes        | Planned   |
