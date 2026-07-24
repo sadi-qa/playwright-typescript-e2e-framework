@@ -62,6 +62,21 @@ The application under test is [SauceDemo](https://www.saucedemo.com), a demonstr
 - Product name, price, and quantity validation
 - Continue shopping with preserved cart state
 
+### Checkout and Order Completion
+
+- Checkout entry with selected products
+- Required first-name validation
+- Required last-name validation
+- Required postal-code validation
+- Valid customer information submission
+- Cancel from customer-information page
+- Checkout product verification
+- Item subtotal calculation
+- Tax and final-total calculation
+- Cancel from checkout overview
+- Successful order completion
+- Return home after order completion
+
 ### Browser Configuration
 
 The framework contains Playwright projects for:
@@ -102,9 +117,13 @@ playwright-typescript-e2e-framework
 │   └── auth.fixture.ts
 ├── pages
 │   ├── cart.page.ts
+│   ├── checkout-complete.page.ts
+│   ├── checkout-information.page.ts
+│   ├── checkout-overview.page.ts
 │   ├── inventory.page.ts
 │   └── login.page.ts
 ├── test-data
+│   ├── checkout-data.ts
 │   ├── login-messages.ts
 │   ├── products.ts
 │   └── users.ts
@@ -113,6 +132,8 @@ playwright-typescript-e2e-framework
 │   │   └── login.spec.ts
 │   ├── cart
 │   │   └── cart.spec.ts
+│   ├── checkout
+│   │   └── checkout.spec.ts
 │   └── inventory
 │       └── inventory.spec.ts
 ├── .env.example
@@ -263,6 +284,10 @@ The framework uses tags to support targeted test execution.
 - `@smoke`
 - `@regression`
 - `@inventory`
+- `@negative`
+- `@login`
+- `@cart`
+- `@checkout`
 
 ### Run smoke tests
 
@@ -330,6 +355,36 @@ npx playwright test tests/inventory/inventory.spec.ts --project=chromium --heade
 
 ```powershell
 npm run test:cart
+```
+
+### Run checkout tests
+
+```powershell
+npm run test:checkout
+```
+
+### Run negative tests
+
+```powershell
+npm run test:negative
+```
+
+### Run Chromium tests
+
+```powershell
+npm run test:chromium
+```
+
+### Run with a visible Chromium browser
+
+```powershell
+npm run test:headed
+```
+
+### Run Playwright UI Mode
+
+```powershell
+npm run test:ui
 ```
 
 ### Generate a trace

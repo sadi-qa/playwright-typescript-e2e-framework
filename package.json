@@ -14,7 +14,8 @@
     "test:ui": "playwright test --ui",
     "report": "playwright show-report",
     "test:inventory": "playwright test --grep @inventory",
-    "test:cart": "playwright test --grep @cart"
+    "test:cart": "playwright test --grep @cart",
+    "test:checkout": "playwright test --grep @checkout"
   },
   "repository": {
     "type": "git",
