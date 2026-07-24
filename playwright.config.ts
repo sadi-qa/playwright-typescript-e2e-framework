@@ -14,6 +14,8 @@ const environment = getEnvironment();
 export default defineConfig({
   testDir: './tests',
 
+  outputDir: 'test-results',
+
   fullyParallel: true,
 
   forbidOnly: Boolean(process.env.CI),
@@ -22,7 +24,25 @@ export default defineConfig({
 
   workers: process.env.CI ? 1 : undefined,
 
-  reporter: 'html',
+  reporter: [
+    ['list'],
+
+    [
+      'html',
+      {
+        open: 'never',
+        outputFolder: 'playwright-report',
+      },
+    ],
+
+    [
+      'junit',
+      {
+        outputFile:
+          'test-results/junit/results.xml',
+      },
+    ],
+  ],
 
   use: {
     baseURL: environment.baseUrl,
@@ -32,11 +52,14 @@ export default defineConfig({
     trace: 'on-first-retry',
 
     screenshot: 'only-on-failure',
+
+    video: 'retain-on-failure',
   },
 
   projects: [
     {
       name: 'chromium',
+
       use: {
         ...devices['Desktop Chrome'],
       },
@@ -44,6 +67,7 @@ export default defineConfig({
 
     {
       name: 'firefox',
+
       use: {
         ...devices['Desktop Firefox'],
       },
@@ -51,6 +75,7 @@ export default defineConfig({
 
     {
       name: 'webkit',
+
       use: {
         ...devices['Desktop Safari'],
       },
