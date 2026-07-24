@@ -3,12 +3,14 @@ import {
   test as base,
 } from '@playwright/test';
 
+import { CartPage } from '../pages/cart.page';
 import { InventoryPage } from '../pages/inventory.page';
 import { LoginPage } from '../pages/login.page';
 import { users } from '../test-data/users';
 
 interface AuthenticatedFixtures {
   inventoryPage: InventoryPage;
+  cartPage: CartPage;
 }
 
 export const test =
@@ -16,7 +18,8 @@ export const test =
     inventoryPage: async ({ page }, use) => {
       const loginPage = new LoginPage(page);
 
-      const inventoryPage = new InventoryPage(page);
+      const inventoryPage =
+        new InventoryPage(page);
 
       await loginPage.open();
 
@@ -34,6 +37,17 @@ export const test =
       ).toHaveText('Products');
 
       await use(inventoryPage);
+    },
+
+    cartPage: async (
+      { inventoryPage },
+      use,
+    ) => {
+      const cartPage = new CartPage(
+        inventoryPage.page,
+      );
+
+      await use(cartPage);
     },
   });
 
