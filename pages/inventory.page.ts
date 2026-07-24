@@ -29,6 +29,8 @@ export class InventoryPage {
 
   readonly shoppingCartLink: Locator;
 
+  readonly cartBadge: Locator;
+
   constructor(page: Page) {
     this.page = page;
 
@@ -69,6 +71,10 @@ export class InventoryPage {
     this.shoppingCartLink = page.getByTestId(
       'shopping-cart-link',
     );
+
+    this.cartBadge = page.getByTestId(
+      'shopping-cart-badge',
+    );
   }
 
   async selectSortOption(
@@ -89,5 +95,43 @@ export class InventoryPage {
     return prices.map((price) =>
       Number(price.replace('$', '').trim()),
     );
+  }
+
+  getProductCard(productName: string): Locator {
+    return this.inventoryItems.filter({
+      hasText: productName,
+    });
+  }
+
+  async addProductToCart(
+    productName: string,
+  ): Promise<void> {
+    const productCard =
+      this.getProductCard(productName);
+
+    await productCard
+      .getByRole('button', {
+        name: 'Add to cart',
+        exact: true,
+      })
+      .click();
+  }
+
+  async removeProductFromInventory(
+    productName: string,
+  ): Promise<void> {
+    const productCard =
+      this.getProductCard(productName);
+
+    await productCard
+      .getByRole('button', {
+        name: 'Remove',
+        exact: true,
+      })
+      .click();
+  }
+
+  async openCart(): Promise<void> {
+    await this.shoppingCartLink.click();
   }
 }

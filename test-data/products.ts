@@ -37,3 +37,29 @@ export const expectedProductNames = expectedProducts.map(
 export const expectedProductPrices = expectedProducts.map(
   ({ price }) => price,
 );
+
+const requireProduct = (name: string): Product => {
+  const product = expectedProducts.find(
+    (candidate) => candidate.name === name,
+  );
+
+  if (!product) {
+    throw new Error(
+      `Required product was not found: ${name}`,
+    );
+  }
+
+  return product;
+};
+
+export const cartProducts = {
+  backpack: requireProduct('Sauce Labs Backpack'),
+
+  bikeLight: requireProduct(
+    'Sauce Labs Bike Light',
+  ),
+
+  fleeceJacket: requireProduct(
+    'Sauce Labs Fleece Jacket',
+  ),
+} as const;
