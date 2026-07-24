@@ -1,7 +1,4 @@
-import {
-  type Locator,
-  type Page,
-} from '@playwright/test';
+import { type Locator, type Page } from "@playwright/test";
 
 export class CheckoutCompletePage {
   readonly page: Page;
@@ -17,19 +14,13 @@ export class CheckoutCompletePage {
   constructor(page: Page) {
     this.page = page;
 
-    this.pageTitle = page.getByTestId('title');
+    this.pageTitle = page.getByTestId("title");
 
-    this.confirmationHeader = page.getByTestId(
-      'complete-header',
-    );
+    this.confirmationHeader = page.getByTestId("complete-header");
 
-    this.confirmationText = page.getByTestId(
-      'complete-text',
-    );
+    this.confirmationText = page.getByTestId("complete-text");
 
-    this.backHomeButton = page.getByTestId(
-      'back-to-products',
-    );
+    this.backHomeButton = page.getByTestId("back-to-products");
   }
 
   async returnHome(): Promise<void> {

@@ -1,17 +1,10 @@
-import {
-  type Locator,
-  type Page,
-} from '@playwright/test';
+import { type Locator, type Page } from "@playwright/test";
 
-const parseCurrency = (
-  text: string,
-): number => {
+const parseCurrency = (text: string): number => {
   const match = text.match(/\d+\.\d{2}/);
 
   if (!match) {
-    throw new Error(
-      `Unable to parse currency value from: ${text}`,
-    );
+    throw new Error(`Unable to parse currency value from: ${text}`);
   }
 
   return Number(match[0]);
@@ -41,42 +34,27 @@ export class CheckoutOverviewPage {
   constructor(page: Page) {
     this.page = page;
 
-    this.pageTitle = page.getByTestId('title');
+    this.pageTitle = page.getByTestId("title");
 
-    this.cartItems = page.locator('.cart_item');
+    this.cartItems = page.locator(".cart_item");
 
-    this.productNames = page.getByTestId(
-      'inventory-item-name',
-    );
+    this.productNames = page.getByTestId("inventory-item-name");
 
-    this.productPrices = page.getByTestId(
-      'inventory-item-price',
-    );
+    this.productPrices = page.getByTestId("inventory-item-price");
 
-    this.itemTotalLabel = page.getByTestId(
-      'subtotal-label',
-    );
+    this.itemTotalLabel = page.getByTestId("subtotal-label");
 
-    this.taxLabel = page.getByTestId(
-      'tax-label',
-    );
+    this.taxLabel = page.getByTestId("tax-label");
 
-    this.totalLabel = page.getByTestId(
-      'total-label',
-    );
+    this.totalLabel = page.getByTestId("total-label");
 
-    this.finishButton = page.getByTestId(
-      'finish',
-    );
+    this.finishButton = page.getByTestId("finish");
 
-    this.cancelButton = page.getByTestId(
-      'cancel',
-    );
+    this.cancelButton = page.getByTestId("cancel");
   }
 
   async getItemTotal(): Promise<number> {
-    const text =
-      await this.itemTotalLabel.innerText();
+    const text = await this.itemTotalLabel.innerText();
 
     return parseCurrency(text);
   }

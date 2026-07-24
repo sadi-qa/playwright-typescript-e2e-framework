@@ -1,4 +1,4 @@
-import { type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page } from "@playwright/test";
 
 export class CartPage {
   readonly page: Page;
@@ -22,31 +22,21 @@ export class CartPage {
   constructor(page: Page) {
     this.page = page;
 
-    this.pageTitle = page.getByTestId('title');
+    this.pageTitle = page.getByTestId("title");
 
-    this.cartList = page.locator('.cart_list');
+    this.cartList = page.locator(".cart_list");
 
-    this.cartItems = page.locator('.cart_item');
+    this.cartItems = page.locator(".cart_item");
 
-    this.productNames = page.getByTestId(
-      'inventory-item-name',
-    );
+    this.productNames = page.getByTestId("inventory-item-name");
 
-    this.productPrices = page.getByTestId(
-      'inventory-item-price',
-    );
+    this.productPrices = page.getByTestId("inventory-item-price");
 
-    this.quantities = page.getByTestId(
-      'item-quantity',
-    );
+    this.quantities = page.getByTestId("item-quantity");
 
-    this.continueShoppingButton = page.getByTestId(
-      'continue-shopping',
-    );
+    this.continueShoppingButton = page.getByTestId("continue-shopping");
 
-    this.checkoutButton = page.getByTestId(
-      'checkout',
-    );
+    this.checkoutButton = page.getByTestId("checkout");
   }
 
   getCartItem(productName: string): Locator {
@@ -55,14 +45,12 @@ export class CartPage {
     });
   }
 
-  async removeProduct(
-    productName: string,
-  ): Promise<void> {
+  async removeProduct(productName: string): Promise<void> {
     const cartItem = this.getCartItem(productName);
 
     await cartItem
-      .getByRole('button', {
-        name: 'Remove',
+      .getByRole("button", {
+        name: "Remove",
         exact: true,
       })
       .click();
@@ -74,5 +62,5 @@ export class CartPage {
 
   async startCheckout(): Promise<void> {
     await this.checkoutButton.click();
-}
+  }
 }

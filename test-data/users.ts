@@ -1,4 +1,4 @@
-import { getEnvironment } from '../config/environment';
+import { getEnvironment } from "../config/environment";
 
 export interface UserCredentials {
   username: string;
@@ -8,7 +8,7 @@ export interface UserCredentials {
 const environment = getEnvironment();
 
 export const users: Record<
-  'standard' | 'lockedOut' | 'invalid',
+  "standard" | "lockedOut" | "invalid",
   UserCredentials
 > = {
   standard: {
@@ -22,7 +22,7 @@ export const users: Record<
   },
 
   invalid: {
-    username: 'invalid_user',
-    password: 'invalid_password',
+    username: "invalid_user",
+    password: "invalid_password",
   },
 };

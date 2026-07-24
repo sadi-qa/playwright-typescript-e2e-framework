@@ -1,4 +1,4 @@
-import { type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page } from "@playwright/test";
 
 export class LoginPage {
   readonly page: Page;
@@ -16,21 +16,21 @@ export class LoginPage {
   constructor(page: Page) {
     this.page = page;
 
-    this.usernameInput = page.getByPlaceholder('Username');
+    this.usernameInput = page.getByPlaceholder("Username");
 
-    this.passwordInput = page.getByPlaceholder('Password');
+    this.passwordInput = page.getByPlaceholder("Password");
 
-    this.loginButton = page.getByRole('button', {
-      name: 'Login',
+    this.loginButton = page.getByRole("button", {
+      name: "Login",
     });
 
-    this.errorMessage = page.getByTestId('error');
+    this.errorMessage = page.getByTestId("error");
 
-    this.errorCloseButton = page.getByTestId('error-button');
+    this.errorCloseButton = page.getByTestId("error-button");
   }
 
   async open(): Promise<void> {
-    await this.page.goto('/');
+    await this.page.goto("/");
   }
 
   async fillUsername(username: string): Promise<void> {
@@ -45,10 +45,7 @@ export class LoginPage {
     await this.loginButton.click();
   }
 
-  async login(
-    username: string,
-    password: string,
-  ): Promise<void> {
+  async login(username: string, password: string): Promise<void> {
     await this.fillUsername(username);
     await this.fillPassword(password);
     await this.submit();

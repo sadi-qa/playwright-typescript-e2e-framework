@@ -1,10 +1,6 @@
-import { type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page } from "@playwright/test";
 
-export type ProductSortOption =
-  | 'az'
-  | 'za'
-  | 'lohi'
-  | 'hilo';
+export type ProductSortOption = "az" | "za" | "lohi" | "hilo";
 
 export class InventoryPage {
   readonly page: Page;
@@ -34,52 +30,32 @@ export class InventoryPage {
   constructor(page: Page) {
     this.page = page;
 
-    this.pageTitle = page.getByTestId('title');
+    this.pageTitle = page.getByTestId("title");
 
-    this.inventoryList = page.getByTestId(
-      'inventory-list',
-    );
+    this.inventoryList = page.getByTestId("inventory-list");
 
-    this.inventoryItems = page.getByTestId(
-      'inventory-item',
-    );
+    this.inventoryItems = page.getByTestId("inventory-item");
 
-    this.productNames = page.getByTestId(
-      'inventory-item-name',
-    );
+    this.productNames = page.getByTestId("inventory-item-name");
 
-    this.productDescriptions = page.getByTestId(
-      'inventory-item-desc',
-    );
+    this.productDescriptions = page.getByTestId("inventory-item-desc");
 
-    this.productPrices = page.getByTestId(
-      'inventory-item-price',
-    );
+    this.productPrices = page.getByTestId("inventory-item-price");
 
-    this.productImages = this.inventoryItems.locator(
-      'img',
-    );
+    this.productImages = this.inventoryItems.locator("img");
 
-    this.addToCartButtons = page.getByRole('button', {
-      name: 'Add to cart',
+    this.addToCartButtons = page.getByRole("button", {
+      name: "Add to cart",
     });
 
-    this.sortDropdown = page.getByTestId(
-      'product-sort-container',
-    );
+    this.sortDropdown = page.getByTestId("product-sort-container");
 
-    this.shoppingCartLink = page.getByTestId(
-      'shopping-cart-link',
-    );
+    this.shoppingCartLink = page.getByTestId("shopping-cart-link");
 
-    this.cartBadge = page.getByTestId(
-      'shopping-cart-badge',
-    );
+    this.cartBadge = page.getByTestId("shopping-cart-badge");
   }
 
-  async selectSortOption(
-    option: ProductSortOption,
-  ): Promise<void> {
+  async selectSortOption(option: ProductSortOption): Promise<void> {
     await this.sortDropdown.selectOption(option);
   }
 
@@ -92,9 +68,7 @@ export class InventoryPage {
   async getProductPrices(): Promise<number[]> {
     const prices = await this.productPrices.allInnerTexts();
 
-    return prices.map((price) =>
-      Number(price.replace('$', '').trim()),
-    );
+    return prices.map((price) => Number(price.replace("$", "").trim()));
   }
 
   getProductCard(productName: string): Locator {
@@ -103,29 +77,23 @@ export class InventoryPage {
     });
   }
 
-  async addProductToCart(
-    productName: string,
-  ): Promise<void> {
-    const productCard =
-      this.getProductCard(productName);
+  async addProductToCart(productName: string): Promise<void> {
+    const productCard = this.getProductCard(productName);
 
     await productCard
-      .getByRole('button', {
-        name: 'Add to cart',
+      .getByRole("button", {
+        name: "Add to cart",
         exact: true,
       })
       .click();
   }
 
-  async removeProductFromInventory(
-    productName: string,
-  ): Promise<void> {
-    const productCard =
-      this.getProductCard(productName);
+  async removeProductFromInventory(productName: string): Promise<void> {
+    const productCard = this.getProductCard(productName);
 
     await productCard
-      .getByRole('button', {
-        name: 'Remove',
+      .getByRole("button", {
+        name: "Remove",
         exact: true,
       })
       .click();
