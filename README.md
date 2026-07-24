@@ -52,6 +52,16 @@ The application under test is [SauceDemo](https://www.saucedemo.com), a demonstr
 - Price sorting from low to high
 - Price sorting from high to low
 
+### Shopping Cart
+
+- Add one product
+- Add multiple products
+- Cart badge count
+- Remove product from inventory
+- Remove product from cart
+- Product name, price, and quantity validation
+- Continue shopping with preserved cart state
+
 ### Browser Configuration
 
 The framework contains Playwright projects for:
@@ -88,14 +98,21 @@ playwright-typescript-e2e-framework
 │   ├── exploratory-testing-notes.md
 │   ├── test-inventory.md
 │   └── test-plan.md
+├── fixtures
+│   └── auth.fixture.ts
 ├── pages
+│   ├── cart.page.ts
+│   ├── inventory.page.ts
 │   └── login.page.ts
 ├── test-data
 │   ├── login-messages.ts
+│   ├── products.ts
 │   └── users.ts
 ├── tests
 │   ├── auth
 │   │   └── login.spec.ts
+│   ├── cart
+│   │   └── cart.spec.ts
 │   └── inventory
 │       └── inventory.spec.ts
 ├── .env.example
@@ -307,6 +324,12 @@ npx playwright test tests/inventory/inventory.spec.ts --project=chromium
 
 ```powershell
 npx playwright test tests/inventory/inventory.spec.ts --project=chromium --headed
+```
+
+### Run shopping cart tests
+
+```powershell
+npm run test:cart
 ```
 
 ### Generate a trace

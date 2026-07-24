@@ -43,14 +43,14 @@
 | DETAIL-001   | Product Details      | Open product from product name           | Correct product details page opens                                 | P1       | Functional                | Yes        | Planned   |
 | DETAIL-002   | Product Details      | Compare inventory and detail information | Name, description, image, and price are consistent                 | P1       | Data Validation           | Yes        | Planned   |
 | DETAIL-003   | Product Details      | Return to inventory                      | Back to products returns user to inventory                         | P2       | Navigation                | Yes        | Planned   |
-| CART-001     | Cart                 | Add one product                          | Product is added and cart badge becomes 1                          | P0       | Smoke, Functional         | Yes        | Planned   |
-| CART-002     | Cart                 | Add multiple products                    | All selected products appear and badge matches quantity            | P0       | Functional                | Yes        | Planned   |
-| CART-003     | Cart                 | Remove product from inventory            | Product is removed and button and badge states update              | P1       | Functional                | Yes        | Planned   |
-| CART-004     | Cart                 | Remove product from cart                 | Product disappears and badge updates                               | P1       | Functional                | Yes        | Planned   |
-| CART-005     | Cart                 | Validate cart product details            | Cart product name, price, and quantity are correct                 | P1       | Data Validation           | Yes        | Planned   |
-| CART-006     | Cart                 | Continue shopping from cart              | User returns to inventory without losing cart contents             | P2       | Navigation                | Yes        | Planned   |
-| CART-007     | Cart                 | Persist cart through refresh             | Cart contents remain consistent after page refresh                 | P2       | Session                   | Later      | Planned   |
-| CART-008     | Cart                 | Reset application state                  | Cart and application state reset as expected                       | P1       | State Management          | Yes        | Planned   |
+| CART-001 | Cart | Add one product | Product is added and cart badge becomes 1 | P0 | Smoke, Functional | Yes | Automated |
+| CART-002 | Cart | Add multiple products | All selected products appear and badge matches quantity | P0 | Functional | Yes | Automated |
+| CART-003 | Cart | Remove product from inventory | Product is removed and button and badge states update | P1 | Functional | Yes | Automated |
+| CART-004 | Cart | Remove product from cart | Product disappears and badge updates | P1 | Functional | Yes | Automated |
+| CART-005 | Cart | Validate cart product details | Cart product name, price, and quantity are correct | P1 | Data Validation | Yes | Automated |
+| CART-006 | Cart | Continue shopping from cart | User returns to inventory without losing cart contents | P2 | Navigation | Yes | Automated |
+| CART-007 | Cart | Persist cart through refresh | Cart contents remain consistent after page refresh | P2 | Session | Later | Planned |
+| CART-008 | Cart | Reset application state | Cart and application state reset as expected | P1 | State Management | Yes | Planned |
 | CHECKOUT-001 | Checkout Information | Begin checkout with product              | Customer information page opens                                    | P0       | Smoke, Functional         | Yes        | Planned   |
 | CHECKOUT-002 | Checkout Information | Submit all fields empty                  | First required-field validation is displayed                       | P1       | Negative                  | Yes        | Planned   |
 | CHECKOUT-003 | Checkout Information | Submit without last name                 | Last-name validation is displayed                                  | P1       | Negative                  | Yes        | Planned   |
